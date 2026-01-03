@@ -23,9 +23,12 @@
   padding: 10px;
   margin: 10px;
 }
-.search {
+.filter-btn {
   padding: 10px;
   margin: 10px;
+}
+.filter {
+  cursor: pointer;
 }
 .res-container {
   display: flex;

@@ -1,57 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/*****
- * Header
- *   - Logo
- *   - Nav Items
- * Body
- *   - Search
- *   - RestaurantContainer
- *      - RestaurantCards
- * Footer
- *   - Copyright
- *   - Links
- *   - Adress
- *   - Contact
- */
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-conatainer">
-        <img
-          className="logo-img"
-          alt="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About-Us</li>
-          <li>Contact-us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCards = ({ resData }) => {
-  const { name, cuisines, avgRating, deliveryTime, image } = resData;
-
-  return (
-    <div className="res-cards">
-      <img className="res-logo" src={image} alt={name} />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{avgRating} ⭐</h3>
-      <h3>{deliveryTime} minutes</h3>
-    </div>
-  );
-};
-
-const resObj = [
+const resList = [
   {
     id: "1",
     name: "KFC",
@@ -189,27 +136,4 @@ const resObj = [
     image: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
   },
 ];
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resObj.map((restaurant) => (
-          <RestaurantCards key={restaurant.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
